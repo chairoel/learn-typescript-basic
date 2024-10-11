@@ -8,7 +8,7 @@ temanKita = {
 let temanKita2;
 temanKita2 = {
     nama: 'mamas',
-    isKampret: true,
+    isKampret: false,
     hutang: 60000,
 };
 console.log({ temanKita });
