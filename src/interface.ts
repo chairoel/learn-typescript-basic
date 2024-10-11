@@ -48,7 +48,7 @@ function createProsessorAMD(processor: AMD): void {
   console.log(result);
 }
 
-const intelCoreI7 = {
+const coreI7: Intel = {
   brand: 'intel',
   baseModel: 'core i7',
   modelName: 'i7-2172H',
@@ -56,7 +56,7 @@ const intelCoreI7 = {
   turboBoost: true,
 };
 
-const amdRyzen3 = {
+const ryzen3: AMD = {
   brand: 'AMD',
   baseModel: 'ryzen 3',
   modelName: 'r-5570x',
@@ -64,5 +64,5 @@ const amdRyzen3 = {
   precisionBoost: true,
 };
 
-createProsessorIntel(intelCoreI7);
-createProsessorAMD(amdRyzen3);
+createProsessorIntel(coreI7);
+createProsessorAMD(ryzen3);
