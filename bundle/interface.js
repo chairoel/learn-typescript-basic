@@ -37,7 +37,7 @@ const coreI7 = {
     baseModel: 'core i7',
     modelName: 'i7-2172H',
     clockSpeed: 8,
-    coreTotal: 'apa core',
+    coreTotal: 'DualCore',
     turboBoost: true,
 };
 const ryzen3 = {

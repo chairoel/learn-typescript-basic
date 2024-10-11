@@ -1,6 +1,9 @@
 // !interface
 
-type Core = 2 | 4 | 8 | 12 | 'dual core' | 'quad core' | 'apa core';
+type CoreCount = 2 | 4 | 8 | 12;
+type CoreName = 'DualCore' | 'QuadCore' | 'OctaCore' | 'SuperCore';
+type Core = CoreCount | CoreName; // Union Type
+// type Core = CoreCount & CoreName; // Intersaction Type
 
 interface IProsessor {
   brand: string;
@@ -59,7 +62,7 @@ const coreI7: Intel = {
   baseModel: 'core i7',
   modelName: 'i7-2172H',
   clockSpeed: 8,
-  coreTotal: 'apa core',
+  coreTotal: 'DualCore',
   turboBoost: true,
 };
 
