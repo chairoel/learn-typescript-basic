@@ -18,6 +18,15 @@ interface IProsessor {
 interface Intel extends IProsessor {
   turboBoost: boolean;
 }
+//pewarisan dari Intel
+interface Pentium extends Intel {
+  // Khusus prosesor series pentium
+}
+
+//pewarisan dari Intel
+interface Xeon extends Intel {
+  // Khusus prosesor series xeon
+}
 
 //pewarisan dari IProsessor
 interface AMD extends IProsessor {
