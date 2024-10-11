@@ -5,10 +5,6 @@ interface IProsessor {
   baseModel: string;
   modelName: string;
   clockSpeed: number;
-}
-
-//Bisa menambahkan seperti
-interface IProsessor {
   turboBoost: boolean;
 }
 
