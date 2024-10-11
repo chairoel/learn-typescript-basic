@@ -1,6 +1,6 @@
 "use strict";
 // !interface
-function createProsessor(processor) {
+function createProsessorIntel(processor) {
     const result = `
   -------
   Terimakasih ${processor.brand} 🎇
@@ -12,7 +12,21 @@ function createProsessor(processor) {
   nama model: ${processor.modelName} 🍻
   kecepatan clock: ${processor.clockSpeed} 🍌
   turbo boost enable? ${processor.turboBoost}
+  `;
+    console.log(result);
+}
+function createProsessorAMD(processor) {
+    const result = `
+  -------
+  Terimakasih ${processor.brand} 🎇
+  -------
+  anda telah berhasil membuat prosesor dengan detail 
+  berikut:👇
   
+  nama base model: ${processor.baseModel} ❤❤
+  nama model: ${processor.modelName} 🍻
+  kecepatan clock: ${processor.clockSpeed} 🍌
+  precision boost enable? ${processor.precisionBoost}
   `;
     console.log(result);
 }
@@ -23,4 +37,12 @@ const intelCoreI7 = {
     clockSpeed: 8,
     turboBoost: true,
 };
-createProsessor(intelCoreI7);
+const amdRyzen3 = {
+    brand: 'AMD',
+    baseModel: 'ryzen 3',
+    modelName: 'r-5570x',
+    clockSpeed: 6,
+    precisionBoost: true,
+};
+createProsessorIntel(intelCoreI7);
+createProsessorAMD(amdRyzen3);

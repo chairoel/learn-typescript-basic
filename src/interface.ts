@@ -5,10 +5,19 @@ interface IProsessor {
   baseModel: string;
   modelName: string;
   clockSpeed: number;
+}
+
+//pewarisan dari IProsessor
+interface Intel extends IProsessor {
   turboBoost: boolean;
 }
 
-function createProsessor(processor: IProsessor): void {
+//pewarisan dari IProsessor
+interface AMD extends IProsessor {
+  precisionBoost: boolean;
+}
+
+function createProsessorIntel(processor: Intel): void {
   const result: string = `
   -------
   Terimakasih ${processor.brand} 🎇
@@ -20,7 +29,21 @@ function createProsessor(processor: IProsessor): void {
   nama model: ${processor.modelName} 🍻
   kecepatan clock: ${processor.clockSpeed} 🍌
   turbo boost enable? ${processor.turboBoost}
+  `;
+  console.log(result);
+}
+function createProsessorAMD(processor: AMD): void {
+  const result: string = `
+  -------
+  Terimakasih ${processor.brand} 🎇
+  -------
+  anda telah berhasil membuat prosesor dengan detail 
+  berikut:👇
   
+  nama base model: ${processor.baseModel} ❤❤
+  nama model: ${processor.modelName} 🍻
+  kecepatan clock: ${processor.clockSpeed} 🍌
+  precision boost enable? ${processor.precisionBoost}
   `;
   console.log(result);
 }
@@ -33,4 +56,13 @@ const intelCoreI7 = {
   turboBoost: true,
 };
 
-createProsessor(intelCoreI7);
+const amdRyzen3 = {
+  brand: 'AMD',
+  baseModel: 'ryzen 3',
+  modelName: 'r-5570x',
+  clockSpeed: 6,
+  precisionBoost: true,
+};
+
+createProsessorIntel(intelCoreI7);
+createProsessorAMD(amdRyzen3);
