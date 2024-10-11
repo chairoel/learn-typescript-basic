@@ -12,7 +12,7 @@ function createProsessorIntel(processor) {
   nama model: ${processor.modelName} 🍻
   kecepatan clock: ${processor.clockSpeed} 🍌
   total core: ${processor.coreTotal} 🥓
-  turbo boost enable? ${processor.turboBoost} 🍤
+  turbo boost enable: ${processor.turboBoost} 🍤
   `;
     console.log(result);
 }
@@ -28,7 +28,7 @@ function createProsessorAMD(processor) {
   nama model: ${processor.modelName} 🍻
   kecepatan clock: ${processor.clockSpeed} 🍌
   total core: ${processor.coreTotal} 🥓
-  precision boost enable? ${processor.precisionBoost} 🍤
+  precision boost enable: ${processor.precisionBoost ? processor.precisionBoost : 'tidak ada'} 🍤
   `;
     console.log(result);
 }
@@ -40,13 +40,21 @@ const coreI7 = {
     coreTotal: 'DualCore',
     turboBoost: true,
 };
+const ryzen1 = {
+    brand: 'AMD',
+    baseModel: 'ryzen 1',
+    modelName: 'r-1132x',
+    clockSpeed: 2,
+    coreTotal: 2,
+};
 const ryzen3 = {
     brand: 'AMD',
     baseModel: 'ryzen 3',
     modelName: 'r-5570x',
     clockSpeed: 6,
     coreTotal: 8,
-    precisionBoost: true,
+    precisionBoost: 'Yes, ready to overclock!',
 };
 createProsessorIntel(coreI7);
+createProsessorAMD(ryzen1);
 createProsessorAMD(ryzen3);

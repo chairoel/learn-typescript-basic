@@ -21,7 +21,7 @@ interface Intel extends IProsessor {
 
 //pewarisan dari IProsessor
 interface AMD extends IProsessor {
-  precisionBoost: boolean;
+  precisionBoost?: string;
 }
 
 function createProsessorIntel(processor: Intel): void {
@@ -36,7 +36,7 @@ function createProsessorIntel(processor: Intel): void {
   nama model: ${processor.modelName} 🍻
   kecepatan clock: ${processor.clockSpeed} 🍌
   total core: ${processor.coreTotal} 🥓
-  turbo boost enable? ${processor.turboBoost} 🍤
+  turbo boost enable: ${processor.turboBoost} 🍤
   `;
   console.log(result);
 }
@@ -52,7 +52,7 @@ function createProsessorAMD(processor: AMD): void {
   nama model: ${processor.modelName} 🍻
   kecepatan clock: ${processor.clockSpeed} 🍌
   total core: ${processor.coreTotal} 🥓
-  precision boost enable? ${processor.precisionBoost} 🍤
+  precision boost enable: ${processor.precisionBoost ? processor.precisionBoost : 'tidak ada'} 🍤
   `;
   console.log(result);
 }
@@ -66,14 +66,23 @@ const coreI7: Intel = {
   turboBoost: true,
 };
 
+const ryzen1: AMD = {
+  brand: 'AMD',
+  baseModel: 'ryzen 1',
+  modelName: 'r-1132x',
+  clockSpeed: 2,
+  coreTotal: 2,
+};
+
 const ryzen3: AMD = {
   brand: 'AMD',
   baseModel: 'ryzen 3',
   modelName: 'r-5570x',
   clockSpeed: 6,
   coreTotal: 8,
-  precisionBoost: true,
+  precisionBoost: 'Yes, ready to overclock!',
 };
 
 createProsessorIntel(coreI7);
+createProsessorAMD(ryzen1);
 createProsessorAMD(ryzen3);
