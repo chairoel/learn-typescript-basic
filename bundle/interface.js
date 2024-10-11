@@ -10,7 +10,10 @@ function createProsessor(processor) {
   
   nama base model: ${processor.baseModel} ❤❤
   nama model: ${processor.modelName} 🍻
-  kecepatan clock: ${processor.clockSpeed} 🍌`;
+  kecepatan clock: ${processor.clockSpeed} 🍌
+  turbo boost enable? ${processor.turboBoost}
+  
+  `;
     console.log(result);
 }
 const intelCoreI7 = {
@@ -18,5 +21,6 @@ const intelCoreI7 = {
     baseModel: 'core i7',
     modelName: 'i7-2172H',
     clockSpeed: 8,
+    turboBoost: true,
 };
 createProsessor(intelCoreI7);

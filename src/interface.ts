@@ -7,6 +7,11 @@ interface IProsessor {
   clockSpeed: number;
 }
 
+//Bisa menambahkan seperti
+interface IProsessor {
+  turboBoost: boolean;
+}
+
 function createProsessor(processor: IProsessor): void {
   const result: string = `
   -------
@@ -17,7 +22,10 @@ function createProsessor(processor: IProsessor): void {
   
   nama base model: ${processor.baseModel} ❤❤
   nama model: ${processor.modelName} 🍻
-  kecepatan clock: ${processor.clockSpeed} 🍌`;
+  kecepatan clock: ${processor.clockSpeed} 🍌
+  turbo boost enable? ${processor.turboBoost}
+  
+  `;
   console.log(result);
 }
 
@@ -26,6 +34,7 @@ const intelCoreI7 = {
   baseModel: 'core i7',
   modelName: 'i7-2172H',
   clockSpeed: 8,
+  turboBoost: true,
 };
 
 createProsessor(intelCoreI7);
